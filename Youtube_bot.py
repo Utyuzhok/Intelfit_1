@@ -18,6 +18,7 @@ class YoutubeBot():
     db_port = settings.DB_PORT
     comment_url = settings.COMMENT_URL
     video_url = settings.VIDEO_URL
+
     def __init__(self):
         self.driver = webdriver.Chrome()
         client = MongoClient('mongodb://localhost:27017/')
@@ -93,3 +94,6 @@ class YoutubeBot():
         self.mails.insert_one({'email': email, 'password': self.signup_password})
 
         return self.driver
+
+if __name__ == '__main__':
+    #Your script here
